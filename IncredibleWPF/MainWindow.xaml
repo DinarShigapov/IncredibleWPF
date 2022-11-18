@@ -32,7 +32,7 @@
             <StackPanel Orientation="Vertical">
                 <Border VerticalAlignment="Top" HorizontalAlignment="Stretch" Height="220" BorderThickness="0.5" Padding="10">
                     <Border.BorderBrush>
-                        <SolidColorBrush Color="Black" Opacity="0.4"/>
+                        <SolidColorBrush Color="Black" Opacity="0.5"/>
                     </Border.BorderBrush>
                     <Image Source="/Resources/photo.png" />
                 </Border>
