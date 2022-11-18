@@ -5,7 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:IncredibleWPF"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800" MinHeight="426" MinWidth="750" MaxHeight="490" MaxWidth="927">
+        Title="Карточка сотрудника" 
+        Height="450" Width="800" MinHeight="426" MinWidth="750" MaxHeight="490" MaxWidth="927">
+
 
     <Window.Resources>
         <Style TargetType="TextBox">
@@ -22,7 +24,7 @@
             <Setter Property="Padding" Value="2"/>
         </Style>
     </Window.Resources>
-
+    
     <Grid Margin="10">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="13*"/>
