@@ -5,7 +5,24 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:IncredibleWPF"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800" MinHeight="426" MinWidth="690" MaxHeight="490" MaxWidth="927">
+        Title="MainWindow" Height="450" Width="800" MinHeight="426" MinWidth="750" MaxHeight="490" MaxWidth="927">
+
+    <Window.Resources>
+        <Style TargetType="TextBox">
+            <Setter Property="Height" Value="20"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+        </Style>
+        <Style TargetType="ComboBox">
+            <Setter Property="Height" Value="20"/>
+            <Setter Property="VerticalAlignment" Value="Top"/>
+        </Style>
+        <Style TargetType="Button">
+            <Setter Property="Height" Value="24"/>
+            <Setter Property="Margin" Value="0 6 0 6"/>
+            <Setter Property="Padding" Value="2"/>
+        </Style>
+    </Window.Resources>
+
     <Grid Margin="10">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="13*"/>
@@ -22,31 +39,23 @@
                 <Button Padding="2" Margin="0 15 0 0" HorizontalAlignment="Left" Content="Выбрать фото">
                 </Button>
             </StackPanel>
-            <StackPanel VerticalAlignment="Bottom">
-                <StackPanel.Resources>
-                    <Style TargetType="Button">
-                        <Setter Property="HorizontalAlignment" Value="Left"/>
-                        <Setter Property="Margin" Value="0 6 0 6"/>
-                        <Setter Property="Width" Value="180"/>
-                        <Setter Property="Padding" Value="2"/>
-                    </Style>
-                </StackPanel.Resources>
+            <StackPanel VerticalAlignment="Bottom" HorizontalAlignment="Left">
                 <Button>
                     <StackPanel Orientation="Horizontal">
                         <Image Margin="0 0 10 0" Width="18" Source="/Resources/icon1.png"/>
-                        <TextBlock><Run Text="Штатное расписание"/></TextBlock>
+                        <TextBlock>Штатное расписание</TextBlock>
                     </StackPanel>
                 </Button>
                 <Button>
                     <StackPanel Orientation="Horizontal">
                         <Image Margin="0 0 10 0" Width="18" Source="/Resources/icon2.png"/>
-                        <TextBlock><Run Text="Отпуска работника"/></TextBlock>
+                        <TextBlock>Отпуска работника</TextBlock>
                     </StackPanel>
                 </Button>
-                <Button>
+                <Button >
                     <StackPanel Orientation="Horizontal">
                         <Image Margin="0 0 10 0" Width="18" Source="/Resources/icon3.png"/>
-                        <TextBlock><Run Text="Командировки работника"/></TextBlock>
+                        <TextBlock>Командировки работника</TextBlock>
                     </StackPanel>
                 </Button>
             </StackPanel>
@@ -58,16 +67,13 @@
             </Grid.RowDefinitions>
             <TabControl Grid.Row="0">
                 <TabItem>
-                    <TabItem.Header>Основные данные</TabItem.Header>
+                    <TabItem.Header>
+                        <TextBlock Margin="25 0 25 0">Основные данные</TextBlock>
+                    </TabItem.Header>
                     <TabItem.Content>
-                        <StackPanel Margin="10">
+                        <StackPanel Margin="7">
                             <StackPanel.Resources>
-                                <Style TargetType="ComboBox">
-                                    <Setter Property="Height" Value="20"/>
-                                    <Setter Property="VerticalAlignment" Value="Top"/>
-                                </Style>
                                 <Style TargetType="TextBox">
-                                    <Setter Property="Height" Value="20"/>
                                     <Setter Property="Width" Value="80"/>
                                     <Setter Property="VerticalAlignment" Value="Top"/>
                                 </Style>
@@ -83,7 +89,7 @@
                             <StackPanel Orientation="Horizontal">
                                 <StackPanel Orientation="Horizontal">
                                     <TextBlock Text="Таб№: "/>
-                                    <TextBox></TextBox>
+                                    <TextBox HorizontalContentAlignment="Right">0333</TextBox>
                                 </StackPanel>
                                 <StackPanel Margin="40 0 0 0" Orientation="Horizontal">
                                     <TextBlock Text="Пол: "/>
@@ -117,26 +123,26 @@
                             </StackPanel>
                             <StackPanel Margin="0 20 0 0" Orientation="Horizontal">
                                 <GroupBox Padding="10">
-                                        <GroupBox.Header>Место рождения</GroupBox.Header>
-                                        <StackPanel>
-                                            <StackPanel Orientation="Horizontal" Margin="0 3 0 0">
-                                                <TextBlock Margin="0 0 4 0">Страна:</TextBlock>
-                                                <TextBox Margin="6 0 0 0" HorizontalAlignment="Left" Width="130">Казахстан</TextBox>
-                                            </StackPanel>
-                                            <StackPanel Orientation="Horizontal" Margin="0 3 0 0">
-                                                <TextBlock Margin="0 0 4 0">Город:</TextBlock>
-                                                <TextBox Margin="12 0 0 0" HorizontalAlignment="Left" Width="130">Алматы</TextBox>
-                                            </StackPanel>
-                                            <StackPanel Orientation="Horizontal" Margin="0 3 0 0">
-                                                <TextBlock Margin="0 0 4 0">Район:</TextBlock>
-                                                <TextBox Margin="11 0 0 0" HorizontalAlignment="Left" Width="130">Алатауский район</TextBox>
-                                            </StackPanel>
-                                            <StackPanel Orientation="Horizontal" Margin="0 3 0 0">
-                                                <TextBlock Margin="0 0 4 0">Область:</TextBlock>
-                                                <TextBox HorizontalAlignment="Left" Width="130">Алматинская область</TextBox>
-                                            </StackPanel>
+                                    <GroupBox.Header>Место рождения</GroupBox.Header>
+                                    <StackPanel>
+                                        <StackPanel Orientation="Horizontal" Margin="0 3 0 0">
+                                            <TextBlock Margin="0 0 4 0">Страна:</TextBlock>
+                                            <TextBox Margin="6 0 0 0" HorizontalAlignment="Left" Width="130">Казахстан</TextBox>
                                         </StackPanel>
-                                    </GroupBox>
+                                        <StackPanel Orientation="Horizontal" Margin="0 3 0 0">
+                                            <TextBlock Margin="0 0 4 0">Город:</TextBlock>
+                                            <TextBox Margin="12 0 0 0" HorizontalAlignment="Left" Width="130">Алматы</TextBox>
+                                        </StackPanel>
+                                        <StackPanel Orientation="Horizontal" Margin="0 3 0 0">
+                                            <TextBlock Margin="0 0 4 0">Район:</TextBlock>
+                                            <TextBox Margin="11 0 0 0" HorizontalAlignment="Left" Width="130">Алатауский район</TextBox>
+                                        </StackPanel>
+                                        <StackPanel Orientation="Horizontal" Margin="0 3 0 0">
+                                            <TextBlock Margin="0 0 4 0">Область:</TextBlock>
+                                            <TextBox HorizontalAlignment="Left" Width="130">Алматинская область</TextBox>
+                                        </StackPanel>
+                                    </StackPanel>
+                                </GroupBox>
                                 <StackPanel Orientation="Vertical" Margin="20 0 0 0">
                                     <StackPanel.Style>
                                         <Style TargetType="StackPanel">
@@ -165,48 +171,50 @@
                     </TabItem.Content>
                 </TabItem>
                 <TabItem>
-                    <TabItem.Header>Дополнительные данные</TabItem.Header>
+                    <TabItem.Header>
+                        <TextBlock Margin="25 0 25 0">Дополнительные данные</TextBlock>
+                    </TabItem.Header>
                     <TabItem.Content>
-                        <StackPanel Orientation="Vertical" Margin="10"  VerticalAlignment="Top">
+                        <StackPanel Orientation="Vertical" Margin="7"  VerticalAlignment="Top">
                             <StackPanel.Resources>
                                 <Style TargetType="StackPanel">
                                     <Setter Property="Margin" Value="0 0 0 10"/>
                                 </Style>
                             </StackPanel.Resources>
                             <StackPanel>
-                                    <TextBlock HorizontalAlignment="Left">ИНН:</TextBlock>
-                                    <TextBox HorizontalAlignment="Left" Width="130">830214105095</TextBox>
-                                </StackPanel>
-                                <StackPanel>
-                                    <GroupBox>
-                                        <GroupBox.Header>Место регистрации</GroupBox.Header>
+                                <TextBlock HorizontalAlignment="Left">ИНН:</TextBlock>
+                                <TextBox HorizontalAlignment="Left" Width="130">830214105095</TextBox>
+                            </StackPanel>
+                            <StackPanel>
+                                <GroupBox>
+                                    <GroupBox.Header>Место регистрации</GroupBox.Header>
                                     <StackPanel Orientation="Horizontal">
                                         <StackPanel Grid.Column="0">
-                                                    <TextBlock>Индекс:</TextBlock>
-                                                    <TextBox HorizontalAlignment="Left" Width="130">010000</TextBox>
-                                                </StackPanel>
+                                            <TextBlock>Индекс:</TextBlock>
+                                            <TextBox HorizontalAlignment="Left" Width="130">010000</TextBox>
+                                        </StackPanel>
                                         <StackPanel Margin="15 0 0 0" Grid.Column="1">
                                             <TextBlock>Адрес:</TextBlock>
                                             <TextBox HorizontalAlignment="Left" Width="300">г. Алматы, ул. Еримбенова, 6</TextBox>
                                         </StackPanel>
                                     </StackPanel>
-                                    </GroupBox>
-                                </StackPanel>
-                                <StackPanel>
-                                    <GroupBox>
-                                        <GroupBox.Header>Место жительства фактическое</GroupBox.Header>
+                                </GroupBox>
+                            </StackPanel>
+                            <StackPanel>
+                                <GroupBox>
+                                    <GroupBox.Header>Место жительства фактическое</GroupBox.Header>
                                     <StackPanel Orientation="Horizontal">
                                         <StackPanel Grid.Column="0">
-                                                <TextBlock Text="Индекс: "/>
-                                                <TextBox HorizontalAlignment="Left" Width="130">010000</TextBox>
-                                                </StackPanel>
+                                            <TextBlock Text="Индекс: "/>
+                                            <TextBox HorizontalAlignment="Left" Width="130">010000</TextBox>
+                                        </StackPanel>
                                         <StackPanel Margin="15 0 0 0" Grid.Column="1">
                                             <TextBlock>Адрес:</TextBlock>
                                             <TextBox HorizontalAlignment="Left" Width="300">г. Алматы, ул. Еримбенова, 6</TextBox>
                                         </StackPanel>
                                     </StackPanel>
-                                    </GroupBox>
-                                </StackPanel>
+                                </GroupBox>
+                            </StackPanel>
                             <StackPanel Orientation="Horizontal" VerticalAlignment="Top">
                                 <TextBlock Text="Телефон: "/>
                                 <TextBox Width="120" Height="20" VerticalAlignment="Top">+77272504896</TextBox>
@@ -226,12 +234,8 @@
                 <TabItem>
                     <TabItem.Header>Должности</TabItem.Header>
                     <TabItem.Content>
-                        <Grid Margin="5">
+                        <Grid Margin="7">
                             <Grid.Resources>
-                                <Style TargetType="ComboBox">
-                                    <Setter Property="Height" Value="20"/>
-                                    <Setter Property="VerticalAlignment" Value="Top"/>
-                                </Style>
                                 <Style TargetType="TextBox">
                                     <Setter Property="Height" Value="20"/>
                                     <Setter Property="Width" Value="80"/>
@@ -324,21 +328,19 @@
                                 <StackPanel VerticalAlignment="Bottom" HorizontalAlignment="Right" Orientation="Horizontal">
                                     <StackPanel.Resources>
                                         <Style TargetType="Button">
-                                            <Setter Property="Height" Value="24"/>
-
                                             <Setter Property="VerticalContentAlignment" Value="Center"/>
                                         </Style>
                                     </StackPanel.Resources>
                                     <Button>
                                         <StackPanel Orientation="Horizontal">
                                             <Image Margin="0 0 10 0" Width="18" Source="/Resources/file1.png"/>
-                                            <TextBlock><Run Text="Приказ о приеме на работу"/></TextBlock>
+                                            <TextBlock>Приказ о приеме на работу</TextBlock>
                                         </StackPanel>
                                     </Button>
                                     <Button Margin="10 0 0 0">
                                         <StackPanel  Orientation="Horizontal">
                                             <Image Margin="0 0 10 0" Width="18" Source="/Resources/file1.png"/>
-                                            <TextBlock><Run Text="Приказ об увольнении"/></TextBlock>
+                                            <TextBlock>Приказ об увольнении</TextBlock>
                                         </StackPanel>
                                     </Button>
                                 </StackPanel>
@@ -358,7 +360,7 @@
                 <TabItem>
                     <TabItem.Header>Образование</TabItem.Header>
                     <TabItem.Content>
-                        <Grid Margin="5">
+                        <Grid Margin="7">
                             <Grid>
                                 <Grid.Resources>
                                     <Style TargetType="ComboBox">
@@ -366,7 +368,6 @@
                                         <Setter Property="VerticalAlignment" Value="Top"/>
                                     </Style>
                                     <Style TargetType="TextBox">
-                                        <Setter Property="Height" Value="20"/>
                                         <Setter Property="Width" Value="80"/>
                                         <Setter Property="VerticalAlignment" Value="Top"/>
                                     </Style>
@@ -384,26 +385,29 @@
                                         <Grid>
                                             <StackPanel Orientation="Horizontal">
                                                 <TextBlock Text="Код документа: "/>
-                                                <TextBox></TextBox>
+                                                <ComboBox HorizontalContentAlignment="Right" Width="71">
+                                                    <ComboBoxItem Content="0007" IsSelected="True"/>
+                                                    <ComboBoxItem Content="0008"/>
+                                                </ComboBox>
                                             </StackPanel>
                                             <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
                                                 <TextBlock Text="Год основания: "/>
-                                                <TextBox></TextBox>
+                                                <TextBox>2003</TextBox>
                                             </StackPanel>
                                         </Grid>
                                     </StackPanel>
                                     <StackPanel Orientation="Vertical">
                                         <DockPanel LastChildFill="True">
                                             <TextBlock Text="Учреждение:     " DockPanel.Dock="Left" VerticalAlignment="Center"/>
-                                            <TextBox Width="Auto"/>
+                                            <TextBox Width="Auto" Text="Алматинская Академия Экономики и Статистики (ААЭС)"/>
                                         </DockPanel>
                                         <DockPanel LastChildFill="True">
                                             <TextBlock Text="Квалификация:  " DockPanel.Dock="Left" VerticalAlignment="Center"/>
-                                            <TextBox Width="Auto"/>
+                                            <TextBox Width="Auto" Text="бакалавр"/>
                                         </DockPanel>
                                         <DockPanel LastChildFill="True">
                                             <TextBlock Text="Специальность: " DockPanel.Dock="Left" VerticalAlignment="Center"/>
-                                            <TextBox Width="Auto"/>
+                                            <TextBox Width="Auto" Text="Экономист"/>
                                         </DockPanel>
                                     </StackPanel>
                                     <StackPanel >
@@ -416,7 +420,7 @@
                                             </DataGrid.Columns>
                                         </DataGrid>
                                     </StackPanel>
-                                    <Image Margin="0 10 0 0 " HorizontalAlignment="Left" Source="/Resources/panel1.png" Height="17" Width="326" />
+                                    <Image Margin="0 10 0 0 " HorizontalAlignment="Left" Source="/Resources/panel1.png" Height="30" Width="259" />
                                 </StackPanel>
                             </Grid>
                         </Grid>
@@ -425,11 +429,6 @@
             </TabControl>
             <Grid Grid.Row="1" VerticalAlignment="Bottom" Height="71">
                 <Grid.Resources>
-                    <Style TargetType="Button">
-                        <Setter Property="Height" Value="24"/>
-                        <Setter Property="Margin" Value="0 6 0 6"/>
-                        <Setter Property="Padding" Value="2"/>
-                    </Style>
                     <Style TargetType="StackPanel">
                         <Setter Property="VerticalAlignment" Value="Bottom"/>
                     </Style>
@@ -438,13 +437,13 @@
                     <Button>
                         <StackPanel Orientation="Horizontal">
                             <Image Margin="0 0 10 0" Width="18" Source="/Resources/email.png"/>
-                            <TextBlock><Run Text="Поощрение работника"/></TextBlock>
+                            <TextBlock>Поощрение работника</TextBlock>
                         </StackPanel>
                     </Button>
                     <Button>
                         <StackPanel Orientation="Horizontal">
                             <Image Margin="0 0 10 0" Width="18" Source="/Resources/printer.png"/>
-                            <TextBlock><Run Text="Печать личной карточки"/></TextBlock>
+                            <TextBlock>Печать личной карточки</TextBlock>
                         </StackPanel>
                     </Button>
                 </StackPanel>
@@ -463,12 +462,11 @@
                     <Button Margin="15 0 0 0">
                         <StackPanel Orientation="Horizontal">
                             <Image Margin="0 0 10 0" Width="18" Source="/Resources/cancel.png"/>
-                            <TextBlock><Run Text="Отмена"/></TextBlock>
+                            <TextBlock>Отмена</TextBlock>
                         </StackPanel>
                     </Button>
                 </StackPanel>
             </Grid>
-
         </Grid>
     </Grid>
 </Window>
